@@ -5,9 +5,9 @@ import java.sql.*;
 
 public class formServis extends javax.swing.JFrame {
     
-//    String judulKolom[]={"id_servis","nama","telp","merk","model","imei","keluhan","kerusakan","biaya"};
-//    String sqlFilm="SELECT*FROM tServis";
-//    int lebarKolom[]={100,300,100,60,200,60};
+    String judulKolom[]={"ID Servis","Nama","Telepon","Merk","Model","Imei","Keluhan","Kerusakan","Biaya"};
+    String sqlServis="SELECT*FROM tServis";
+    int lebar[]={70,100,100,80,140,120,180,180,100};
     
     /**
      * Creates new form formServis
@@ -15,6 +15,8 @@ public class formServis extends javax.swing.JFrame {
     public formServis() {
         initComponents();
         this.setLocationRelativeTo(null);
+        new ConfigDB().tampilTabel(judulKolom, sqlServis, jTableServisMasuk1);
+        new ConfigDB().aturLebarKolom(jTableServisMasuk, lebar);
     }
 
     /**
@@ -26,6 +28,8 @@ public class formServis extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTableServisMasuk = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -47,10 +51,44 @@ public class formServis extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tp_kerusakan = new javax.swing.JTextPane();
         t_biaya = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        bt_tambah = new javax.swing.JButton();
+        bt_simpan = new javax.swing.JButton();
         bt_clear = new javax.swing.JButton();
         bt_keluar = new javax.swing.JButton();
+        bt_ubah = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTableServisMasuk1 = new javax.swing.JTable();
+        bt_hapus = new javax.swing.JButton();
+        t_cari = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        bt_refresh = new javax.swing.JButton();
+
+        jTableServisMasuk.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID Servis", "Nama", "Telp", "Merk", "Model", "IMEI", "Keluhan", "Kerusakan", "Biaya"
+            }
+        ));
+        jTableServisMasuk.setShowVerticalLines(true);
+        jScrollPane3.setViewportView(jTableServisMasuk);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tambah Data Servisan");
@@ -126,48 +164,48 @@ public class formServis extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(t_idServis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(t_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(t_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(t_telp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(cb_merk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(cb_merk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(t_model, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(t_imei, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addContainerGap(29, Short.MAX_VALUE))
+                    .addComponent(t_imei, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel8)
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel9)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(t_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))))
         );
 
-        jPanel2.setBackground(java.awt.Color.lightGray);
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        bt_tambah.setText("TAMBAH");
-        bt_tambah.addActionListener(new java.awt.event.ActionListener() {
+        bt_simpan.setText("SIMPAN");
+        bt_simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_tambahActionPerformed(evt);
+                bt_simpanActionPerformed(evt);
             }
         });
 
@@ -186,29 +224,67 @@ public class formServis extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(bt_tambah, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(bt_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 373, Short.MAX_VALUE)
-                .addComponent(bt_keluar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bt_keluar, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(bt_tambah, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_clear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        bt_ubah.setText("UBAH");
+        bt_ubah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_ubahActionPerformed(evt);
+            }
+        });
+
+        jTableServisMasuk1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID Servis", "Nama", "Telp", "Merk", "Model", "IMEI", "Keluhan", "Kerusakan", "Biaya"
+            }
+        ));
+        jTableServisMasuk1.setShowVerticalLines(true);
+        jTableServisMasuk1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableServisMasuk1MouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(jTableServisMasuk1);
+
+        bt_hapus.setText("HAPUS");
+        bt_hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_hapusActionPerformed(evt);
+            }
+        });
+
+        t_cari.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                t_cariKeyPressed(evt);
+            }
+        });
+
+        jLabel10.setText("CARI ID");
+
+        bt_refresh.setText("Refresh");
+        bt_refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_refreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,26 +292,56 @@ public class formServis extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane4)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bt_simpan, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_ubah, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
+                        .addComponent(bt_keluar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(t_cari, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_simpan)
+                    .addComponent(bt_ubah)
+                    .addComponent(bt_clear)
+                    .addComponent(bt_keluar)
+                    .addComponent(bt_hapus))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t_cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(bt_refresh))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bt_tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_tambahActionPerformed
+    private void bt_simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_simpanActionPerformed
         // TODO add your handling code here:
         try {
             if (t_idServis.getText().isEmpty()){
@@ -284,7 +390,9 @@ public class formServis extends javax.swing.JFrame {
             }
             } catch (Exception e) {
                 }
-    }//GEN-LAST:event_bt_tambahActionPerformed
+        new ConfigDB().tampilTabel(judulKolom, sqlServis, jTableServisMasuk1);
+        new ConfigDB().aturLebarKolom(jTableServisMasuk1, lebar);
+    }//GEN-LAST:event_bt_simpanActionPerformed
 
     private void bt_keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_keluarActionPerformed
         // TODO add your handling code here:
@@ -308,6 +416,88 @@ public class formServis extends javax.swing.JFrame {
         tp_kerusakan.setText(null);
         t_biaya.setText(null);
     }//GEN-LAST:event_bt_clearActionPerformed
+
+    private void bt_ubahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_ubahActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (
+                (t_idServis.getText().isEmpty()) && (t_nama.getText().isEmpty()) &&
+                (t_telp.getText().isEmpty()) && (t_model.getText().isEmpty()) &&
+                (t_imei.getText().isEmpty()) && (tp_keluhan.getText().isEmpty()) &&
+                (tp_kerusakan.getText().isEmpty()) && (t_biaya.getText().isEmpty()) &&
+                (String.valueOf(cb_merk.getSelectedItem())=="Pilih Merk")
+            ){
+                JOptionPane.showMessageDialog(null,"Silahkan Pilih Data dulu untuk proses Ubah");
+                jTableServisMasuk1.requestFocus();
+            } else {
+                String SQL="UPDATE film SET nama='"+t_nama.getText()+"',telp='"+t_telp.getText()+"', merk='"+String.valueOf(cb_merk.getSelectedItem())
+                +"', model='"+t_model.getText()+"', imei='"+t_imei.getText()+"', keluhan='"+tp_keluhan.getText()
+                +"', kerusakan='"+tp_kerusakan.getText()+"', biaya='"+t_biaya.getText()+"', WHERE id_servis='"+t_idServis.getText()+"'";
+                new ConfigDB().ubahData(SQL);
+                new ConfigDB().tampilTabel(judulKolom, sqlServis, jTableServisMasuk1);
+                new ConfigDB().aturLebarKolom(jTableServisMasuk1, lebar);
+            }
+        } catch (Exception e) {
+            System.out.print(e.toString());
+        }
+    }//GEN-LAST:event_bt_ubahActionPerformed
+
+    private void bt_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_hapusActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (
+                (t_idServis.getText().isEmpty()) && (t_nama.getText().isEmpty()) &&
+                (t_telp.getText().isEmpty()) && (t_model.getText().isEmpty()) &&
+                (tp_keluhan.getText().isEmpty()) && (tp_kerusakan.getText().isEmpty()) &&
+                (t_imei.getText().isEmpty()) && (t_biaya.getText().isEmpty()) &&
+                (String.valueOf(cb_merk.getSelectedItem())=="Pilih Merk")
+            ) {
+                JOptionPane.showMessageDialog(null,"Silahkan Pilih Data dulu untuk proses Hapus");
+                jTableServisMasuk1.requestFocus();
+            } else {
+                String SQL="DELETE FROM tservis WHERE id_servis='"+t_idServis.getText()+"'";
+                new ConfigDB().hapusData(SQL);
+                new ConfigDB().tampilTabel(judulKolom, sqlServis, jTableServisMasuk1);
+                new ConfigDB().aturLebarKolom(jTableServisMasuk1, lebar);
+            }
+        } catch (Exception e) {
+            System.out.print(e.toString());
+        }
+    }//GEN-LAST:event_bt_hapusActionPerformed
+
+    private void t_cariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t_cariKeyPressed
+        // TODO add your handling code here:
+        try {
+            String SQL="SELECT*FROM tservis WHERE id_servis like '%"+t_cari.getText()+"%'";
+            new ConfigDB().cariData(judulKolom, SQL, jTableServisMasuk1);
+            } catch (Exception e) {
+            System.out.print(e.toString());
+        }
+    }//GEN-LAST:event_t_cariKeyPressed
+
+    private void bt_refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_refreshActionPerformed
+        // TODO add your handling code here:
+        new ConfigDB().tampilTabel(judulKolom, sqlServis, jTableServisMasuk1);
+        new ConfigDB().aturLebarKolom(jTableServisMasuk1, lebar);
+    }//GEN-LAST:event_bt_refreshActionPerformed
+
+    private void jTableServisMasuk1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableServisMasuk1MouseClicked
+        // TODO add your handling code here:
+        try {
+            int baris = jTableServisMasuk1.getSelectedRow();
+            t_idServis.setText(String.valueOf(jTableServisMasuk1.getValueAt(baris,0)));
+            t_nama.setText(String.valueOf(jTableServisMasuk1.getValueAt(baris,1)));
+            t_telp.setText(String.valueOf(jTableServisMasuk1.getValueAt(baris,2)));
+            cb_merk.setSelectedItem(String.valueOf(jTableServisMasuk1.getValueAt(baris,3)));
+            t_model.setText(String.valueOf(jTableServisMasuk1.getValueAt(baris,4)));
+            t_imei.setText(String.valueOf(jTableServisMasuk1.getValueAt(baris,5)));
+            tp_keluhan.setText(String.valueOf(jTableServisMasuk1.getValueAt(baris,6)));
+            tp_kerusakan.setText(String.valueOf(jTableServisMasuk1.getValueAt(baris,7)));
+            t_biaya.setText(String.valueOf(jTableServisMasuk1.getValueAt(baris,8)));
+            } catch (Exception e) {
+            System.out.print(e.toString());
+        }
+    }//GEN-LAST:event_jTableServisMasuk1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -346,10 +536,14 @@ public class formServis extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_clear;
+    private javax.swing.JButton bt_hapus;
     private javax.swing.JButton bt_keluar;
-    private javax.swing.JButton bt_tambah;
+    private javax.swing.JButton bt_refresh;
+    private javax.swing.JButton bt_simpan;
+    private javax.swing.JButton bt_ubah;
     private javax.swing.JComboBox<String> cb_merk;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -359,10 +553,14 @@ public class formServis extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTable jTableServisMasuk;
+    private javax.swing.JTable jTableServisMasuk1;
     private javax.swing.JTextField t_biaya;
+    private javax.swing.JTextField t_cari;
     private javax.swing.JTextField t_idServis;
     private javax.swing.JTextField t_imei;
     private javax.swing.JTextField t_model;

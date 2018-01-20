@@ -29,9 +29,8 @@ public class formUtama extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        bt_hpMasuk = new javax.swing.JButton();
-        bt_hpKeluar = new javax.swing.JButton();
-        bt_tambahNota = new javax.swing.JButton();
+        bt_diambil = new javax.swing.JButton();
+        bt_servismasuk = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -42,24 +41,17 @@ public class formUtama extends javax.swing.JFrame {
         jPanel1.setBackground(java.awt.Color.white);
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        bt_hpMasuk.setText("Data HP Masuk");
-        bt_hpMasuk.addActionListener(new java.awt.event.ActionListener() {
+        bt_diambil.setText("DAFTAR PENGAMBILAN");
+        bt_diambil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_hpMasukActionPerformed(evt);
+                bt_diambilActionPerformed(evt);
             }
         });
 
-        bt_hpKeluar.setText("Data HP Keluar");
-        bt_hpKeluar.addActionListener(new java.awt.event.ActionListener() {
+        bt_servismasuk.setText("DAFTAR MASUK");
+        bt_servismasuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_hpKeluarActionPerformed(evt);
-            }
-        });
-
-        bt_tambahNota.setText("Tambah Nota");
-        bt_tambahNota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_tambahNotaActionPerformed(evt);
+                bt_servismasukActionPerformed(evt);
             }
         });
 
@@ -68,22 +60,19 @@ public class formUtama extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(bt_tambahNota, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bt_hpMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(bt_hpKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addContainerGap()
+                .addComponent(bt_servismasuk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(bt_diambil, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bt_hpMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt_hpKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt_tambahNota, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bt_diambil, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_servismasuk, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21))
         );
 
@@ -123,23 +112,17 @@ public class formUtama extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bt_hpMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_hpMasukActionPerformed
-        // TODO add your handling code here:
-        formDataHpMasuk m = new formDataHpMasuk();
-        m.setVisible(true);
-    }//GEN-LAST:event_bt_hpMasukActionPerformed
-
-    private void bt_tambahNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_tambahNotaActionPerformed
+    private void bt_servismasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_servismasukActionPerformed
         // TODO add your handling code here:
         formServis m = new formServis();
         m.setVisible(true);
-    }//GEN-LAST:event_bt_tambahNotaActionPerformed
+    }//GEN-LAST:event_bt_servismasukActionPerformed
 
-    private void bt_hpKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_hpKeluarActionPerformed
+    private void bt_diambilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_diambilActionPerformed
         // TODO add your handling code here:
         formDataHpKeluar m = new formDataHpKeluar();
         m.setVisible(true);
-    }//GEN-LAST:event_bt_hpKeluarActionPerformed
+    }//GEN-LAST:event_bt_diambilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,9 +160,8 @@ public class formUtama extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bt_hpKeluar;
-    private javax.swing.JButton bt_hpMasuk;
-    private javax.swing.JButton bt_tambahNota;
+    private javax.swing.JButton bt_diambil;
+    private javax.swing.JButton bt_servismasuk;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
